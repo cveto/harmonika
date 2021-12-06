@@ -10,21 +10,40 @@ var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 
 var button_radius=30;
+var zbirka = new Array;
+var num_rows = 4;
+var num_columns=11;
+zbirka[0] = [1,5];
+zbirka[1] = [1,4];
+zbirka[2] = [2,1];
+zbirka[3] = [3,7];
+zbirka[4] = [0,9];
+
 
 flag_minus=1;
-for (i = 0; i < 4; i++) {
-	for (j = 0; j < 11; j++) {
+for (i = 0; i < num_rows; i++) {
+	for (j = 0; j < num_columns; j++) {
 	
-		if ((i==1 || i==3)  && j==11)
-		{
+		if ((i==1 || i==3)  && j==11) {
 			void(0);
 			// Don't show those buttons
 		}
-		else
-		{
+		
+		// Show these buttons
+		else {
+			ctx.fillStyle = "white";
 			ctx.beginPath();
 			ctx.arc(100+(2*i*button_radius*1.2), 75+(2*j*button_radius*1.2)+(button_radius*flag_minus), button_radius, 0, 2 * Math.PI);
+
+			for (k = 0; k < zbirka.length; k++) {
+				if (i==zbirka[k][0] && j==zbirka[k][1]) {
+					ctx.fillStyle = "#ff00ff";
+					ctx.beginPath();
+					ctx.arc(100+(2*i*button_radius*1.2), 75+(2*j*button_radius*1.2)+(button_radius*flag_minus), button_radius, 0, 2 * Math.PI);
+				}
+			ctx.fill();
 			ctx.stroke();
+			}
 		}
 	}
 	flag_minus=flag_minus*-1;
