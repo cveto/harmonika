@@ -2,54 +2,72 @@
 <html>
 <body>
 
-<canvas id="myCanvas" width="600" height="1000" style="border:1px solid #d3d3d3;">
+<canvas id="myCanvas" width="1200" height="1000" style="border:1px solid #d3d3d3;">
 Your browser does not support the HTML5 canvas tag.</canvas>
 
 <script>
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 
-var button_radius=20;
+var button_radius=15;
+var offset_vrsta=0.55;
 var_offsetX=50;
+var_offsetY=75;
 var zbirka = new Array;
 var num_rows = 4;
 var num_columns=11;
-var l = 1;
+
 // Note
 
-zbirka[0] = [[2,3],[2,4]];
-zbirka[1] = [[2,4],[2,5]];
+zbirka[1] = [[2,3]];
+zbirka[2] = [[2,4]];
+zbirka[3] = [[2,5]];
+zbirka[4] = [[2,7],[2,8]];
+zbirka[5] = [[1,7],[3,6]];
+
+zbirka[6] = [[2,6],[1,8]];
+zbirka[7] = [[2,4],[4,6]];
+zbirka[8] = [[2,5],[2,6]];
 
 
-flag_minus=1;
-for (i = 1; i <= num_rows; i++) {
-	for (j = 1; j <= num_columns; j++) {
-	
-		if ((i==2 || i==4)  && j==12) {
-			void(0);
-			// Don't show those buttons
-		}
-		
-		// Show these buttons
-		else {
-			ctx.fillStyle = "white";
-			ctx.beginPath();
-			ctx.arc(var_offsetX+(2*i*button_radius*1.2), 75+(2*j*button_radius*1.2)+(button_radius*flag_minus), button_radius, 0, 2 * Math.PI);
 
-			for (k = 0; k < zbirka[l].length; k++) {
-				if (i==zbirka[l][k][0] && j==zbirka[l][k][1]) {
-					ctx.fillStyle = "#ff00ff";
-					ctx.beginPath();
-					ctx.arc(var_offsetX+(2*i*button_radius*1.2), 75+(2*j*button_radius*1.2)+(button_radius*flag_minus), button_radius, 0, 2 * Math.PI);
+
+
+for (l=1;l<=zbirka.length;l++) {
+		flag_minus=1;
+		for (i = 1; i <= num_rows; i++) {
+			for (j = 1; j <= num_columns; j++) {
+				if ((i==2 || i==4)  && j==12) {
+					void(0);
+					// Don't show those buttons
 				}
-			ctx.fill();
-			ctx.stroke();
+				
+				// Show these buttons
+				else {
+					ctx.fillStyle = "white";
+					ctx.beginPath();
+					ctx.arc(var_offsetX+(2*i*button_radius*1.2), var_offsetY+(2*j*button_radius*1.2)+(button_radius*offset_vrsta*flag_minus), button_radius, 0, 2 * Math.PI);
+		
+					for (k = 0; k < zbirka[l].length; k++) {
+						if (i==zbirka[l][k][0] && j==zbirka[l][k][1]) {
+							ctx.fillStyle = "#ff00ff";
+							ctx.beginPath();
+							ctx.arc(var_offsetX+(2*i*button_radius*1.2), var_offsetY+(2*j*button_radius*1.2)+(button_radius*offset_vrsta*flag_minus), button_radius, 0, 2 * Math.PI);
+						}
+					ctx.fill();
+					ctx.stroke();
+					}
+				}
 			}
+			flag_minus=flag_minus*-1;
 		}
+	var_offsetX=var_offsetX+button_radius*12;
+	if (l%6==0) {
+		var_offsetY=var_offsetY+num_columns*button_radius*3
+		var_offsetX=50;
 	}
-	flag_minus=flag_minus*-1;
+	
 }
-
 
 </script> 
 
