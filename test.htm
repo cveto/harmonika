@@ -9,22 +9,23 @@ Your browser does not support the HTML5 canvas tag.</canvas>
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 
-var button_radius=30;
+var button_radius=20;
+var_offsetX=50;
 var zbirka = new Array;
 var num_rows = 4;
 var num_columns=11;
-zbirka[0] = [1,5];
-zbirka[1] = [1,4];
-zbirka[2] = [2,1];
-zbirka[3] = [3,7];
-zbirka[4] = [0,9];
+var l = 1;
+// Note
+
+zbirka[0] = [[2,3],[2,4]];
+zbirka[1] = [[2,4],[2,5]];
 
 
 flag_minus=1;
-for (i = 0; i < num_rows; i++) {
-	for (j = 0; j < num_columns; j++) {
+for (i = 1; i <= num_rows; i++) {
+	for (j = 1; j <= num_columns; j++) {
 	
-		if ((i==1 || i==3)  && j==11) {
+		if ((i==2 || i==4)  && j==12) {
 			void(0);
 			// Don't show those buttons
 		}
@@ -33,13 +34,13 @@ for (i = 0; i < num_rows; i++) {
 		else {
 			ctx.fillStyle = "white";
 			ctx.beginPath();
-			ctx.arc(100+(2*i*button_radius*1.2), 75+(2*j*button_radius*1.2)+(button_radius*flag_minus), button_radius, 0, 2 * Math.PI);
+			ctx.arc(var_offsetX+(2*i*button_radius*1.2), 75+(2*j*button_radius*1.2)+(button_radius*flag_minus), button_radius, 0, 2 * Math.PI);
 
-			for (k = 0; k < zbirka.length; k++) {
-				if (i==zbirka[k][0] && j==zbirka[k][1]) {
+			for (k = 0; k < zbirka[l].length; k++) {
+				if (i==zbirka[l][k][0] && j==zbirka[l][k][1]) {
 					ctx.fillStyle = "#ff00ff";
 					ctx.beginPath();
-					ctx.arc(100+(2*i*button_radius*1.2), 75+(2*j*button_radius*1.2)+(button_radius*flag_minus), button_radius, 0, 2 * Math.PI);
+					ctx.arc(var_offsetX+(2*i*button_radius*1.2), 75+(2*j*button_radius*1.2)+(button_radius*flag_minus), button_radius, 0, 2 * Math.PI);
 				}
 			ctx.fill();
 			ctx.stroke();
