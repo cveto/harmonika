@@ -5,6 +5,15 @@
 <canvas id="myCanvas" width="1200" height="1000" style="border:1px solid #d3d3d3;">
 Your browser does not support the HTML5 canvas tag.</canvas>
 
+
+<p>
+P - palec
+K - kazalec
+S - sredinec
+R - prstanec
+M - mezinec
+
+</p>
 <script>
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
@@ -19,15 +28,15 @@ var num_columns=11;
 
 // Note
 
-zbirka[1] = [[2,3]];
-zbirka[2] = [[2,4]];
-zbirka[3] = [[2,5]];
-zbirka[4] = [[2,7],[2,8]];
-zbirka[5] = [[1,7],[3,6]];
+zbirka[1] = [[2,3,"P"]];
+zbirka[2] = [[2,4,"K"]];
+zbirka[3] = [[2,5,"S"]];
+zbirka[4] = [[2,7,"S"],[2,8,"R"]];
+zbirka[5] = [[1,7,"M"],[3,6,"K"]];
 
-zbirka[6] = [[2,6],[1,8]];
-zbirka[7] = [[2,4],[4,6]];
-zbirka[8] = [[2,5],[2,6]];
+zbirka[6] = [[2,6,"K"],[1,8,"M"]];
+zbirka[7] = [[2,4,"P"],[4,6,"K"]];
+zbirka[8] = [[2,6,"S"],[2,5,"K"]];
 
 
 
@@ -45,14 +54,26 @@ for (l=1;l<=zbirka.length;l++) {
 				// Show these buttons
 				else {
 					ctx.fillStyle = "white";
+					ctx.font = "15px Arial";
 					ctx.beginPath();
 					ctx.arc(var_offsetX+(2*i*button_radius*1.2), var_offsetY+(2*j*button_radius*1.2)+(button_radius*offset_vrsta*flag_minus), button_radius, 0, 2 * Math.PI);
 		
+					// Pressed buttons:
 					for (k = 0; k < zbirka[l].length; k++) {
 						if (i==zbirka[l][k][0] && j==zbirka[l][k][1]) {
 							ctx.fillStyle = "#ff00ff";
 							ctx.beginPath();
-							ctx.arc(var_offsetX+(2*i*button_radius*1.2), var_offsetY+(2*j*button_radius*1.2)+(button_radius*offset_vrsta*flag_minus), button_radius, 0, 2 * Math.PI);
+							var circle_X=var_offsetX+(2*i*button_radius*1.2);
+							var circle_Y=var_offsetY+(2*j*button_radius*1.2)+(button_radius*offset_vrsta*flag_minus);
+							
+							ctx.arc(circle_X,circle_Y , button_radius, 0, 2 * Math.PI);
+							
+							ctx.fill();
+							ctx.stroke();
+							ctx.fillStyle = "black";
+							ctx.fillText(zbirka[l][k][2],circle_X-6,circle_Y+6);
+							ctx.beginPath();
+
 						}
 					ctx.fill();
 					ctx.stroke();
@@ -62,7 +83,7 @@ for (l=1;l<=zbirka.length;l++) {
 			flag_minus=flag_minus*-1;
 		}
 	var_offsetX=var_offsetX+button_radius*12;
-	if (l%6==0) {
+	if (l%5==0) {
 		var_offsetY=var_offsetY+num_columns*button_radius*3
 		var_offsetX=50;
 	}
