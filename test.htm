@@ -7,11 +7,11 @@ Your browser does not support the HTML5 canvas tag.</canvas>
 
 
 <p>
-P - palec
-K - kazalec
-S - sredinec
-R - prstanec
-M - mezinec
+P - palec </br>
+K - kazalec</br>
+S - sredinec</br>
+R - prstanec</br>
+M - mezinec</br>
 
 </p>
 <script>
@@ -28,15 +28,16 @@ var num_columns=11;
 
 // Note
 
-zbirka[1] = [[2,3,"P"]];
-zbirka[2] = [[2,4,"K"]];
-zbirka[3] = [[2,5,"S"]];
-zbirka[4] = [[2,7,"S"],[2,8,"R"]];
-zbirka[5] = [[1,7,"M"],[3,6,"K"]];
-
-zbirka[6] = [[2,6,"K"],[1,8,"M"]];
-zbirka[7] = [[2,4,"P"],[4,6,"K"]];
-zbirka[8] = [[2,6,"S"],[2,5,"K"]];
+// Koordinata tipke x, koordianat tipke y, prst, smer meha
+zbirka[1] = [[2,3,"P","NOT"]					];
+zbirka[2] = [[2,4,"K","NOT"]					];
+zbirka[3] = [[2,5,"S","NOT"]					];
+zbirka[4] = [[2,7,"S","NOT"],		[2,8,"R"]	];
+zbirka[5] = [[1,7,"M","NOT"],		[3,6,"K"]	];
+			
+zbirka[6] = [[2,6,"K","NOT"],		[1,8,"M"]	];
+zbirka[7] = [[2,4,"P","VEN"],		[4,6,"K"]	];
+zbirka[8] = [[2,6,"S","VEN"],		[2,5,"K"]	];
 
 
 
@@ -44,6 +45,17 @@ zbirka[8] = [[2,6,"S"],[2,5,"K"]];
 
 for (l=1;l<=zbirka.length;l++) {
 		flag_minus=1;
+		
+		ctx.font = "40px Arial";
+		ctx.fillStyle = "black";
+		if (zbirka[l][0][3] == "VEN") {
+			ctx.fillText("<<  >>",var_offsetX+35,var_offsetY+5);
+		}  else {
+			ctx.fillText(">>  <<",var_offsetX+35,var_offsetY+5);
+		}
+
+		
+		
 		for (i = 1; i <= num_rows; i++) {
 			for (j = 1; j <= num_columns; j++) {
 				if ((i==2 || i==4)  && j==12) {
@@ -54,29 +66,46 @@ for (l=1;l<=zbirka.length;l++) {
 				// Show these buttons
 				else {
 					ctx.fillStyle = "white";
-					ctx.font = "15px Arial";
+					ctx.font = "20px Arial";
 					ctx.beginPath();
 					ctx.arc(var_offsetX+(2*i*button_radius*1.2), var_offsetY+(2*j*button_radius*1.2)+(button_radius*offset_vrsta*flag_minus), button_radius, 0, 2 * Math.PI);
+		
+					if (l > 1) {
+						for (k = 0; k < zbirka[l-1].length; k++) {
+							if (i==zbirka[l-1][k][0] && j==zbirka[l-1][k][1]) {
+								ctx.fillStyle = "#ffcccc";
+								ctx.beginPath();
+								var circle_X=var_offsetX+(2*i*button_radius*1.2);
+								var circle_Y=var_offsetY+(2*j*button_radius*1.2)+(button_radius*offset_vrsta*flag_minus);
+								ctx.arc(circle_X,circle_Y , button_radius, 0, 2 * Math.PI);
+								ctx.fill();
+								ctx.stroke();
+							}
+						}	
+					}
 		
 					// Pressed buttons:
 					for (k = 0; k < zbirka[l].length; k++) {
 						if (i==zbirka[l][k][0] && j==zbirka[l][k][1]) {
-							ctx.fillStyle = "#ff00ff";
+						
+							// Buttons to press
+							ctx.fillStyle = "#ff0000";
 							ctx.beginPath();
 							var circle_X=var_offsetX+(2*i*button_radius*1.2);
 							var circle_Y=var_offsetY+(2*j*button_radius*1.2)+(button_radius*offset_vrsta*flag_minus);
-							
 							ctx.arc(circle_X,circle_Y , button_radius, 0, 2 * Math.PI);
-							
 							ctx.fill();
 							ctx.stroke();
+							
+							// TEXT
+
 							ctx.fillStyle = "black";
-							ctx.fillText(zbirka[l][k][2],circle_X-6,circle_Y+6);
+							ctx.fillText(zbirka[l][k][2],circle_X-7,circle_Y+7);
 							ctx.beginPath();
 
 						}
-					ctx.fill();
-					ctx.stroke();
+					 ctx.fill();
+					 ctx.stroke();
 					}
 				}
 			}
