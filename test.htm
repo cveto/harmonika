@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <body>
-
-<canvas id="myCanvas" width="1200" height="1000" style="border:1px solid #d3d3d3;">
+<h2>Ribnčan</h2>
+<canvas id="myCanvas" width="2450" height="5000" style="border:1px solid #d3d3d3;">
 Your browser does not support the HTML5 canvas tag.</canvas>
 
 
@@ -25,19 +25,72 @@ var_offsetY=75;
 var zbirka = new Array;
 var num_rows = 4;
 var num_columns=11;
+var_prelom=13;
 
 // Note
 
 // Koordinata tipke x, koordianat tipke y, prst, smer meha
-zbirka[1] = [[2,3,"P","NOT"]					];
-zbirka[2] = [[2,4,"K","NOT"]					];
-zbirka[3] = [[2,5,"S","NOT"]					];
-zbirka[4] = [[2,7,"S","NOT"],		[2,8,"R"]	];
-zbirka[5] = [[1,7,"M","NOT"],		[3,6,"K"]	];
-			
-zbirka[6] = [[2,6,"K","NOT"],		[1,8,"M"]	];
-zbirka[7] = [[2,4,"P","VEN"],		[4,6,"K"]	];
-zbirka[8] = [[2,6,"S","VEN"],		[2,5,"K"]	];
+// UVOD
+//zbirka[1] = [[2,3,"P","VEN"]					];
+//zbirka[2] = [[2,4,"K","VEN"]					];
+//zbirka[3] = [[2,5,"S","VEN"]					];
+//zbirka[4] = [[2,7,"S","VEN"],		[2,8,"R"]	];
+//zbirka[5] = [[1,7,"M","VEN"],		[3,6,"K"]	];
+//			
+//zbirka[6] = [[2,6,"K","VEN"],		[1,8,"M"]	];
+//zbirka[7] = [[2,4,"P","VEN"],		[4,6,"K"]	];
+//zbirka[8] = [[2,6,"S","NOT"],		[2,5,"K"]	];
+
+
+// PRVI DEL 1
+zbirka[1] = [[2,4,"P","NOT"],		[2,7,"R"]	];
+zbirka[2] = [[2,5,"P","NOT"],		[2,8,"R"]	];
+zbirka[3] = [[2,6,"P","NOT"],		[2,9,"R"]	];
+zbirka[4] = [[3,6,"P","NOT"],		[3,9,"R"]	];
+zbirka[5] = [[2,7,"P","NOT"],		[2,10,"R"]	];
+
+zbirka[6] = [[2,4,"P","NOT"],		[2,7,"R"]	];
+zbirka[7] = [[2,6,"S","NOT"],		[2,7,"R"]	];
+zbirka[8] = [[3,5,"S","NOT"],		[3,6,"R"]	];
+zbirka[9] = [[2,4,"K","VEN"],		[2,6,"S"]	];
+
+// PRVI DEL 2
+zbirka[10] = [[2,3,"P","VEN"],		[2,7,"R"]	];
+zbirka[11] = [[2,4,"P","VEN"],		[2,8,"R"]	];
+zbirka[12] = [[2,5,"P","VEN"],		[2,9,"R"]	];
+zbirka[13] = [[1,8,"S","VEN"],		[1,9,"R"]	];
+zbirka[14] = [[2,7,"S","VEN"],		[2,8,"R"]	];
+
+zbirka[15] = [[2,7,"S","VEN"],		[2,8,"R"]	];
+zbirka[16] = [[2,5,"S","VEN"],		[2,6,"R"]	];
+zbirka[17] = [[1,7,"M","VEN"]					];
+zbirka[18] = [[2,6,"K","NOT"],		[2,7,"S"]	];
+
+//
+// PRVI DEL 3
+zbirka[19] = [[2,4,"P","NOT"],		[2,7,"R"]	];
+zbirka[20] = [[2,5,"P","NOT"],		[2,8,"R"]	];
+zbirka[21] = [[2,6,"P","NOT"],		[2,9,"R"]	];
+zbirka[22] = [[3,6,"P","NOT"],		[3,9,"R"]	];
+zbirka[23] = [[2,7,"P","NOT"],		[2,10,"R"]	];
+
+zbirka[24] = [[3,7,"K","VEN"],		[3,8,"S"]	];
+zbirka[25] = [[3,7,"K","VEN"],		[3,8,"S"],	[3,5,"P"]	];
+zbirka[26] = [[3,7,"K","VEN"],		[3,8,"S"],	[4,6,"P"]	];		// SLAKOV GUMB
+zbirka[27] = [[3,7,"K","NOT"],		[3,8,"S"],	[3,6,"P"]	];
+
+// PRVI DEL 4
+zbirka[28] = [[2,3,"P","VEN"],		[2,7,"R"]	];
+zbirka[29] = [[2,4,"P","VEN"],		[2,8,"R"]	];
+zbirka[30] = [[2,5,"P","VEN"],		[2,9,"R"]	];
+zbirka[31] = [[1,8,"S","VEN"],		[1,9,"R"]	];
+zbirka[32] = [[2,7,"S","VEN"],		[2,8,"R"]	];
+
+zbirka[32] = [[2,7,"S","VEN"],		[2,8,"R"]	];
+zbirka[33] = [[2,5,"K","VEN"],		[2,6,"S"]	];
+zbirka[34] = [[2,4,"K","VEN"],		[2,5,"S"]	];
+zbirka[35] = [[2,5,"K","NOT"],		[2,6,"S"],	[2,8,"M"]	];
+
 
 
 // Drugačna oglasitev harmonike
@@ -117,7 +170,7 @@ for (l=1;l<=zbirka.length;l++) {
 			flag_minus=flag_minus*-1;
 		}
 	var_offsetX=var_offsetX+button_radius*12;
-	if (l%5==0) {
+	if (l%var_prelom==0) {
 		var_offsetY=var_offsetY+num_columns*button_radius*3
 		var_offsetX=50;
 	}
