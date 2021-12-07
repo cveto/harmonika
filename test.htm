@@ -95,7 +95,7 @@ zbirka[35] = [[2,5,"K","NOT"],		[2,6,"S"],	[2,8,"M"]	];
 
 // Drugačna oglasitev harmonike
 var_popravek_tipke_X=0;
-var_popravek_tiple_Y=0;
+var_popravek_tiple_Y=-1;
 
 
 
@@ -103,13 +103,13 @@ var_popravek_tiple_Y=0;
 for (l=1;l<=zbirka.length;l++) {
 		flag_minus=1;
 		
-		ctx.font = "40px Arial";
-		ctx.fillStyle = "black";
-		if (zbirka[l][0][3] == "VEN") {
-			ctx.fillText("<<  >>",var_offsetX+35,var_offsetY+5);
-		}  else {
-			ctx.fillText(">>  <<",var_offsetX+35,var_offsetY+5);
-		}
+//		ctx.font = "40px Arial";
+//		ctx.fillStyle = "black";
+//		if (zbirka[l][0][3] == "VEN") {
+//			ctx.fillText("<<  >>",var_offsetX+35,var_offsetY+5);
+//		}  else {
+//			ctx.fillText(">>  <<",var_offsetX+35,var_offsetY+5);
+//		}
 
 		
 		
@@ -131,7 +131,11 @@ for (l=1;l<=zbirka.length;l++) {
 					if (l > 1) {
 						for (k = 0; k < zbirka[l-1].length; k++) {
 							if ((i-var_popravek_tipke_X)==zbirka[l-1][k][0] && (j-var_popravek_tiple_Y)==zbirka[l-1][k][1]) {
-								ctx.fillStyle = "#ffcccc";
+								if (zbirka[l-1][0][3] == "VEN") {
+									ctx.fillStyle = "#ffcccc";
+								}  else {
+									ctx.fillStyle = "#b3b3ff";
+								}	
 								ctx.beginPath();
 								var circle_X=var_offsetX+(2*i*button_radius*1.2);
 								var circle_Y=var_offsetY+(2*j*button_radius*1.2)+(button_radius*offset_vrsta*flag_minus);
@@ -147,7 +151,11 @@ for (l=1;l<=zbirka.length;l++) {
 						if ((i-var_popravek_tipke_X)==zbirka[l][k][0] && (j-var_popravek_tiple_Y)==zbirka[l][k][1]) {
 						
 							// Buttons to press
-							ctx.fillStyle = "#ff0000";
+							if (zbirka[l][0][3] == "VEN") {
+								ctx.fillStyle = "#ff0000";
+							}  else {
+								ctx.fillStyle = "#3333ff";
+							}
 							ctx.beginPath();
 							var circle_X=var_offsetX+(2*i*button_radius*1.2);
 							var circle_Y=var_offsetY+(2*j*button_radius*1.2)+(button_radius*offset_vrsta*flag_minus);
