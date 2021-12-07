@@ -40,6 +40,10 @@ zbirka[7] = [[2,4,"P","VEN"],		[4,6,"K"]	];
 zbirka[8] = [[2,6,"S","VEN"],		[2,5,"K"]	];
 
 
+// Drugačna oglasitev harmonike
+var_popravek_tipke_X=0;
+var_popravek_tiple_Y=0;
+
 
 
 
@@ -70,9 +74,10 @@ for (l=1;l<=zbirka.length;l++) {
 					ctx.beginPath();
 					ctx.arc(var_offsetX+(2*i*button_radius*1.2), var_offsetY+(2*j*button_radius*1.2)+(button_radius*offset_vrsta*flag_minus), button_radius, 0, 2 * Math.PI);
 		
+					// Buttons pressed on previous step:
 					if (l > 1) {
 						for (k = 0; k < zbirka[l-1].length; k++) {
-							if (i==zbirka[l-1][k][0] && j==zbirka[l-1][k][1]) {
+							if ((i-var_popravek_tipke_X)==zbirka[l-1][k][0] && (j-var_popravek_tiple_Y)==zbirka[l-1][k][1]) {
 								ctx.fillStyle = "#ffcccc";
 								ctx.beginPath();
 								var circle_X=var_offsetX+(2*i*button_radius*1.2);
@@ -86,7 +91,7 @@ for (l=1;l<=zbirka.length;l++) {
 		
 					// Pressed buttons:
 					for (k = 0; k < zbirka[l].length; k++) {
-						if (i==zbirka[l][k][0] && j==zbirka[l][k][1]) {
+						if ((i-var_popravek_tipke_X)==zbirka[l][k][0] && (j-var_popravek_tiple_Y)==zbirka[l][k][1]) {
 						
 							// Buttons to press
 							ctx.fillStyle = "#ff0000";
