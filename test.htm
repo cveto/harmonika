@@ -26,76 +26,74 @@ var zbirka = new Array;
 var num_rows = 4;
 var num_columns=11;
 var_prelom=13;
+// Drugačna oglasitev harmonike
+var var_popravek_tipke_X = 0;
+var var_popravek_tiple_Y = -2;
 
 // Note
-
+hlj=1;
 // Koordinata tipke x, koordianat tipke y, prst, smer meha
 // UVOD
-//zbirka[1] = [[2,3,"P","VEN"]					];
-//zbirka[2] = [[2,4,"K","VEN"]					];
-//zbirka[3] = [[2,5,"S","VEN"]					];
-//zbirka[4] = [[2,7,"S","VEN"],		[2,8,"R"]	];
-//zbirka[5] = [[1,7,"M","VEN"],		[3,6,"K"]	];
-//			
-//zbirka[6] = [[2,6,"K","VEN"],		[1,8,"M"]	];
-//zbirka[7] = [[2,4,"P","VEN"],		[4,6,"K"]	];
-//zbirka[8] = [[2,6,"S","NOT"],		[2,5,"K"]	];
+zbirka[hlj] = [[2,3,"P","VEN"]					];							hlj+=1;
+zbirka[hlj] = [[2,3,"P","VEN"]					];							hlj+=1;
+zbirka[hlj] = [[2,3,"P","VEN"]					];							hlj+=1;
+zbirka[hlj] = [[2,4,"K","VEN"]					];							hlj+=1;
+zbirka[hlj] = [[2,5,"S","VEN"]					];							hlj+=1;
+zbirka[hlj] = [[2,7,"S","VEN"],		[2,8,"R"]	];							hlj+=1;
+zbirka[hlj] = [[1,7,"M","VEN"],		[3,6,"K"]	];							hlj+=1; 
+zbirka[hlj] = [[2,6,"K","VEN"],		[1,8,"M"]	];							hlj+=1;
+zbirka[hlj] = [[2,4,"P","VEN"],		[2,6,"K"]	];							hlj+=1;
+zbirka[hlj] = [[2,6,"S","NOT"],		[2,5,"K"]	];							hlj+=1;
 
+//// PRVI DEL 1
+zbirka[hlj] = [[2,4,"P","NOT"],		[2,7,"R"]	];							hlj+=1;
+zbirka[hlj] = [[2,5,"P","NOT"],		[2,8,"R"]	];							hlj+=1;
+zbirka[hlj] = [[2,6,"P","NOT"],		[2,9,"R"]	];							hlj+=1;
+zbirka[hlj] = [[3,6,"P","NOT"],		[3,9,"R"]	];							hlj+=1;
+zbirka[hlj] = [[2,7,"P","NOT"],		[2,10,"R"]	];							hlj+=1;
 
-// PRVI DEL 1
-zbirka[1] = [[2,4,"P","NOT"],		[2,7,"R"]	];
-zbirka[2] = [[2,5,"P","NOT"],		[2,8,"R"]	];
-zbirka[3] = [[2,6,"P","NOT"],		[2,9,"R"]	];
-zbirka[4] = [[3,6,"P","NOT"],		[3,9,"R"]	];
-zbirka[5] = [[2,7,"P","NOT"],		[2,10,"R"]	];
-
-zbirka[6] = [[2,4,"P","NOT"],		[2,7,"R"]	];
-zbirka[7] = [[2,6,"S","NOT"],		[2,7,"R"]	];
-zbirka[8] = [[3,5,"S","NOT"],		[3,6,"R"]	];
-zbirka[9] = [[2,4,"K","VEN"],		[2,6,"S"]	];
+zbirka[hlj] = [[2,4,"P","NOT"],		[2,7,"R"]	];							hlj+=1;
+zbirka[hlj] = [[2,6,"S","NOT"],		[2,7,"R"]	];							hlj+=1;
+zbirka[hlj] = [[3,5,"S","NOT"],		[3,6,"R"]	];							hlj+=1;
+zbirka[hlj] = [[2,4,"K","VEN"],		[2,6,"S"]	];							hlj+=1;
 
 // PRVI DEL 2
-zbirka[10] = [[2,3,"P","VEN"],		[2,7,"R"]	];
-zbirka[11] = [[2,4,"P","VEN"],		[2,8,"R"]	];
-zbirka[12] = [[2,5,"P","VEN"],		[2,9,"R"]	];
-zbirka[13] = [[1,8,"S","VEN"],		[1,9,"R"]	];
-zbirka[14] = [[2,7,"S","VEN"],		[2,8,"R"]	];
+zbirka[hlj] = [[2,3,"P","VEN"],		[2,7,"R"]	];							hlj+=1;
+zbirka[hlj] = [[2,4,"P","VEN"],		[2,8,"R"]	];							hlj+=1;
+zbirka[hlj] = [[2,5,"P","VEN"],		[2,9,"R"]	];							hlj+=1;
+zbirka[hlj] = [[1,8,"S","VEN"],		[1,9,"R"]	];							hlj+=1;
+zbirka[hlj] = [[2,7,"S","VEN"],		[2,8,"R"]	];							hlj+=1;
 
-zbirka[15] = [[2,7,"S","VEN"],		[2,8,"R"]	];
-zbirka[16] = [[2,5,"S","VEN"],		[2,6,"R"]	];
-zbirka[17] = [[1,7,"M","VEN"]					];
-zbirka[18] = [[2,6,"K","NOT"],		[2,7,"S"]	];
+zbirka[hlj] = [[2,7,"S","VEN"],		[2,8,"R"]	];							hlj+=1;
+zbirka[hlj] = [[2,5,"S","VEN"],		[2,6,"R"]	];							hlj+=1;
+zbirka[hlj] = [[1,7,"M","VEN"]					];							hlj+=1;
+zbirka[hlj] = [[2,6,"K","NOT"],		[2,7,"S"]	];							hlj+=1;
 
-//
 // PRVI DEL 3
-zbirka[19] = [[2,4,"P","NOT"],		[2,7,"R"]	];
-zbirka[20] = [[2,5,"P","NOT"],		[2,8,"R"]	];
-zbirka[21] = [[2,6,"P","NOT"],		[2,9,"R"]	];
-zbirka[22] = [[3,6,"P","NOT"],		[3,9,"R"]	];
-zbirka[23] = [[2,7,"P","NOT"],		[2,10,"R"]	];
+zbirka[hlj] = [[2,4,"P","NOT"],		[2,7,"R"]	];							hlj+=1;
+zbirka[hlj] = [[2,5,"P","NOT"],		[2,8,"R"]	];							hlj+=1;
+zbirka[hlj] = [[2,6,"P","NOT"],		[2,9,"R"]	];							hlj+=1;
+zbirka[hlj] = [[3,6,"P","NOT"],		[3,9,"R"]	];							hlj+=1;
+zbirka[hlj] = [[2,7,"P","NOT"],		[2,10,"R"]	];							hlj+=1;
 
-zbirka[24] = [[3,7,"K","VEN"],		[3,8,"S"]	];
-zbirka[25] = [[3,7,"K","VEN"],		[3,8,"S"],	[3,5,"P"]	];
-zbirka[26] = [[3,7,"K","VEN"],		[3,8,"S"],	[4,6,"P"]	];		// SLAKOV GUMB
-zbirka[27] = [[3,7,"K","NOT"],		[3,8,"S"],	[3,6,"P"]	];
+zbirka[hlj] = [[3,7,"K","VEN"],		[3,8,"S"]	];
+zbirka[hlj] = [[3,7,"K","VEN"],		[3,8,"S"],	[3,5,"P"]	];				hlj+=1;
+zbirka[hlj] = [[3,7,"K","VEN"],		[3,8,"S"],	[4,6,"P"]	];				hlj+=1;		// SLAKOV GUMB
+zbirka[hlj] = [[3,7,"K","NOT"],		[3,8,"S"],	[3,6,"P"]	];				hlj+=1;
 
 // PRVI DEL 4
-zbirka[28] = [[2,3,"P","VEN"],		[2,7,"R"]	];
-zbirka[29] = [[2,4,"P","VEN"],		[2,8,"R"]	];
-zbirka[30] = [[2,5,"P","VEN"],		[2,9,"R"]	];
-zbirka[31] = [[1,8,"S","VEN"],		[1,9,"R"]	];
-zbirka[32] = [[2,7,"S","VEN"],		[2,8,"R"]	];
+zbirka[hlj] = [[2,3,"P","VEN"],		[2,7,"R"]	];							hlj+=1;
+zbirka[hlj] = [[2,4,"P","VEN"],		[2,8,"R"]	];							hlj+=1;
+zbirka[hlj] = [[2,5,"P","VEN"],		[2,9,"R"]	];							hlj+=1;
+zbirka[hlj] = [[1,8,"S","VEN"],		[1,9,"R"]	];							hlj+=1;
+zbirka[hlj] = [[2,7,"S","VEN"],		[2,8,"R"]	];							hlj+=1;
 
-zbirka[32] = [[2,7,"S","VEN"],		[2,8,"R"]	];
-zbirka[33] = [[2,5,"K","VEN"],		[2,6,"S"]	];
-zbirka[34] = [[2,4,"K","VEN"],		[2,5,"S"]	];
-zbirka[35] = [[2,5,"K","NOT"],		[2,6,"S"],	[2,8,"M"]	];
+zbirka[hlj] = [[2,7,"S","VEN"],		[2,8,"R"]	];							hlj+=1;
+zbirka[hlj] = [[2,5,"K","VEN"],		[2,6,"S"]	];							hlj+=1;
+zbirka[hlj] = [[3,4,"K","VEN"],		[3,5,"S"]	];							hlj+=1;
+zbirka[hlj] = [[2,5,"K","NOT"],		[2,6,"S"],	[2,8,"M"]	];
 
 
-
-// Drugačna oglasitev harmonike
-var_popravek_tipke_X=0;
-var_popravek_tiple_Y=-1;
 
 
 
