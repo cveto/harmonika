@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <body>
+<button onclick="load_keys('katjusa')">Katjusa</button>
+<button onclick="load_keys('ribnican')">Ribnican</button>
+
 <h2>Ribnčan</h2>
 <canvas id="myCanvas" width="2450" height="5000" style="border:1px solid #d3d3d3;">
 Your browser does not support the HTML5 canvas tag.</canvas>
@@ -12,9 +15,6 @@ var ctx = c.getContext("2d");
 
 var button_radius=15;
 var offset_vrsta=0.55;
-var_offsetX=50;
-var_offsetY=75;
-
 var num_rows = 4;
 var num_columns=11;
 var_prelom=13;
@@ -114,13 +114,13 @@ function ribnican() {
 	
 	ribncan[hlj] = [[3,7,"3","VEN","SE"],		[2,5,"1"]				];							hlj+=1;
 	ribncan[hlj] = [[3,5,"2","VEN","SE"],		[3,7,"3"]				];							hlj+=1;
-	ribncan[hlj] = [[3,6,"2","NOT","SPOM-"],		[3,7,"3"]				];							hlj+=1;
+	ribncan[hlj] = [[3,6,"2","NOT","SPOM-"],	[3,7,"3"]				];							hlj+=1;
 	ribncan[hlj] = [[3,6,"2","NOT","NIŠ"],		[3,7,"3"]				];							hlj+=1;
 	ribncan[hlj] = [[3,6,"2","NOT","MA-"],		[3,7,"3"]				];							hlj+=1;
 	ribncan[hlj] = [[4,6,"2","NOT","MI-"],		[2,7,"5"]				];							hlj+=1;
 	ribncan[hlj] = [[3,5,"1","NOT","CA"],		[3,7,"3"],	[3,8,"4"]	];							hlj+=1;
 	
-	ribncan[hlj] = [[3,6,"2","NOT","ZDA-A-"]								];							hlj+=1;
+	ribncan[hlj] = [[3,6,"2","NOT","ZDA-A-"]							];							hlj+=1;
 	ribncan[hlj] = [[2,6,"3","NOT","AJ"]								];							hlj+=1;
 	ribncan[hlj] = [[1,7,"4","NOT","ZA-"]								];							hlj+=1;
 	
@@ -217,11 +217,12 @@ function katjusa() {
   return katjusa;
 }
 
-poz = new Array;
-poz=ribnican();
-
-
-for (l=1;l<=poz.length;l++) {
+function load_keys(komad) {
+	var_offsetX=50;
+	var_offsetY=75;
+	ctx.clearRect(0, 0, 5000, 5000);
+	poz=window[komad]();
+	for (l=1;l<=poz.length;l++) {
 		flag_minus=-1;
 		
 		ctx.font = "30px Arial";
@@ -304,6 +305,15 @@ for (l=1;l<=poz.length;l++) {
 	}
 	
 }
+}
+
+
+
+
+poz = new Array;
+poz=katjusa();
+
+
 
 </script> 
 
