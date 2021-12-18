@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
-<body>
+<body onload="load_keys('roblek')">
 <button onclick="load_keys('katjusa')">Katjusa</button>
 <button onclick="load_keys('ribnican')">Ribnican</button>
+<button onclick="load_keys('roblek')">Na Robleku</button>
+
 
 <h2>Ribnčan</h2>
-<canvas id="myCanvas" width="2450" height="5000" style="border:1px solid #d3d3d3;">
+<canvas id="myCanvas" width="2450" height="10000" style="border:1px solid #d3d3d3;">
 Your browser does not support the HTML5 canvas tag.</canvas>
 
 
@@ -216,6 +218,229 @@ function katjusa() {
 
   return katjusa;
 }
+
+function roblek() {
+	var_popravek_tipke_X = 0;
+	var_popravek_tiple_Y = 0;
+	hlj=1;
+	var roblek = new Array;
+	// UVOD
+	roblek[hlj] = [[1,6,"1","NOT"],				[1,9,"4"]												];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","NOT"],				[1,8,"3"],		[1,9,"4"]								];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","NOT"],				[1,8,"3"],		[1,9,"4"]								];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","NOT"],				[1,8,"3"],		[1,9,"4"]								];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","NOT"],				[1,8,"3"],		[1,9,"4"],		[1,6,"1"]				];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","NOT"],				[1,8,"3"],		[1,9,"4"],		[2,5,"1"]				];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","NOT"],				[1,8,"3"],		[1,9,"4"],		[2,5,"1"]				];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","NOT"],				[1,8,"3"],		[1,9,"4"],		[1,6,"1"]				];							hlj+=1;
+
+	roblek[hlj] = [[2,4,"1","VEN"],				[2,8,"3"]												];							hlj+=1;
+	roblek[hlj] = [[2,4,"1","VEN"],				[2,8,"3"]												];							hlj+=1;
+	roblek[hlj] = [[1,5,"1","VEN"],				[1,9,"3"]												];							hlj+=1;
+	roblek[hlj] = [[1,6,"1","VEN"],				[1,10,"3"]												];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","VEN"],				[1,8,"3"],		[1,9,"4"]								];							hlj+=1;
+
+	// PRVI DEL 1
+	roblek[hlj] = [[1,6,"1","NOT","ZA"],				[1,9,"4"]												];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","NOT","KAJ"],				[1,8,"3"],		[1,9,"4"]								];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","NOT","STE"],				[1,8,"3"],		[1,9,"4"]								];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","NOT","SI-"],				[1,8,"3"],		[1,9,"4"]								];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","NOT","TNI"],				[1,8,"3"],		[1,9,"4"],		[1,6,"1"]				];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","NOT","O-"],				[1,8,"3"],		[1,9,"4"],		[2,5,"1"]				];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","NOT","ĆKA-"],				[1,8,"3"],		[1,9,"4"],		[2,5,"1"]				];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","NOT","VI?"],				[1,8,"3"],		[1,9,"4"],		[1,6,"1"]				];							hlj+=1;
+
+	roblek[hlj] = [[2,6,"2","VEN","PRAV"],				[2,7,"3"],		[2,8,"4"]								];							hlj+=1;
+	roblek[hlj] = [[2,6,"2","VEN","NIČ"],				[2,7,"3"],		[2,8,"4"],		[1,7,"1"]				];							hlj+=1;
+	roblek[hlj] = [[2,6,"2","VEN","VAM"],				[2,7,"3"],		[2,8,"4"],		[1,6,"1"]				];							hlj+=1;
+	roblek[hlj] = [[2,6,"2","VEN","PO"],				[2,7,"3"],		[2,8,"4"],		[2,4,"1"]				];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","VEN","GO"],				[1,9,"4"],		[2,8,"3"]								];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","VEN","DU"],				[1,9,"4"],		[2,8,"3"],		[1,6,"1"]				];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","VEN","NI"],				[1,9,"4"],		[2,8,"3"],		[2,4,"1"]				];							hlj+=1;
+
+ 	roblek[hlj] = [[1,7,"2","VEN","VES"],				[1,9,"4"],		[2,8,"3"]								];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","VEN","DAN"],				[1,9,"4"],		[2,8,"3"]								];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","VEN","ME"],				[1,9,"4"],		[2,8,"3"]								];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","VEN","LE"],				[1,9,"4"],		[2,8,"3"],		[2,4,"1"]				];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","VEN","KRE-"],				[1,9,"4"],		[2,8,"3"],		[1,6,"1"]				];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","VEN","GA-"],				[1,9,"4"],		[2,8,"3"],		[1,6,"1"]				];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","VEN","TE"],				[1,9,"4"],		[2,8,"3"],		[2,4,"1"]				];							hlj+=1;
+
+	roblek[hlj] = [[1,7,"2","VEN","VA"],				[1,9,"4"],		[2,8,"3"],		[2,4,"1"]				];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","VEN","ME"],				[1,9,"4"],		[2,8,"3"],		[2,4,"1"]				];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","VEN","SE"],				[1,9,"4"],		[2,8,"3"],		[1,6,"1"]				];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","VEN","O-"],				[1,9,"4"],		[2,8,"3"]								];							hlj+=1;
+	roblek[hlj] = [[2,6,"2","VEN","BRE-"],				[2,7,"3"],		[2,8,"4"]								];							hlj+=1;
+	roblek[hlj] = [[2,6,"2","VEN","GA-"],				[2,7,"3"],		[2,8,"4"],		[1,7,"1"]				];							hlj+=1;
+	roblek[hlj] = [[2,6,"2","VEN","TE"],				[2,7,"3"],		[2,8,"4"],		[1,6,"1"]				];							hlj+=1;
+
+	roblek[hlj] = [[2,6,"2","VEN",""],				[2,7,"3"],		[2,8,"4"],		[2,4,"1"]				];							hlj+=1;
+	// PRVI DEL 2
+	roblek[hlj] = [[1,6,"1","NOT","A"],					[1,9,"4"]												];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","NOT","ME-"],				[1,8,"3"],		[1,9,"4"]								];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","NOT","NI"],				[1,8,"3"],		[1,9,"4"]								];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","NOT","O-"],				[1,8,"3"],		[1,9,"4"]								];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","NOT","ĆKA"],				[1,8,"3"],		[1,9,"4"],		[1,6,"1"]				];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","NOT","LE"],				[1,8,"3"],		[1,9,"4"],		[2,5,"1"]				];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","NOT","SE"],				[1,8,"3"],		[1,9,"4"],		[2,5,"1"]				];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","NOT","ZDI"],				[1,8,"3"],		[1,9,"4"],		[1,6,"1"]				];							hlj+=1;
+
+	roblek[hlj] = [[2,6,"2","VEN","MO-"],				[2,7,"3"],		[2,8,"4"]								];							hlj+=1;
+	roblek[hlj] = [[2,6,"2","VEN","JA"],				[2,7,"3"],		[2,8,"4"],		[1,7,"1"]				];							hlj+=1;
+	roblek[hlj] = [[2,6,"2","VEN","LJU-"],				[2,7,"3"],		[2,8,"4"],		[1,6,"1"]				];							hlj+=1;
+	roblek[hlj] = [[2,6,"2","VEN","BCA"],				[2,7,"3"],		[2,8,"4"],		[2,4,"1"]				];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","VEN","VŠEČ"],				[1,9,"4"],		[2,8,"3"]								];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","VEN","VAM"],				[1,9,"4"],		[2,8,"3"],		[1,6,"1"]				];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","VEN","NI"],				[1,9,"4"],		[2,8,"3"],		[2,4,"1"]				];							hlj+=1;
+
+ 	roblek[hlj] = [[1,7,"2","VEN","KER"],				[1,9,"4"],		[2,8,"3"]								];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","VEN","ME"],				[1,9,"4"],		[2,8,"3"]								];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","VEN","VE-"],				[1,9,"4"],		[2,8,"3"]								];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","VEN","DNO"],				[1,9,"4"],		[2,8,"3"],		[2,4,"1"]				];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","VEN","KA-"],				[1,9,"4"],		[2,8,"3"],		[1,6,"1"]				];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","VEN","RA-"],				[1,9,"4"],		[2,8,"3"],		[1,6,"1"]				];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","VEN","TE"],				[1,9,"4"],		[2,8,"3"],		[2,4,"1"]				];							hlj+=1;
+
+	roblek[hlj] = [[2,4,"1","NOT","GREM"],				[1,8,"4"]												];							hlj+=1;
+	roblek[hlj] = [[2,4,"1","NOT","PA"],				[1,8,"4"]												];							hlj+=1;
+	roblek[hlj] = [[1,6,"1","NOT","RAJŠ"],				[1,10,"4"]												];							hlj+=1;
+	roblek[hlj] = [[1,7,"1","NOT","DRU-"],				[1,11,"4"]												];							hlj+=1;
+	roblek[hlj] = [[1,7,"2","VEN","GAM"],				[1,8,"3"],		[1,9,"4"]								];							hlj+=1;
+
+	// DRUGI DEL 1
+ 	roblek[hlj] = [[2,3,"1","NOT","NA"],				[2,6,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,4,"2","NOT","RO-"],				[2,5,"3"]												];							hlj+=1;
+ 	roblek[hlj] = [[1,5,"1","NOT","BLEK"],				[1,6,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,4,"2","NOT","BOM"],				[2,5,"3"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,5,"3","NOT","O-"],				[3,6,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,5,"3","NOT","DŠEL"],				[2,6,"4"]												];							hlj+=1;
+
+ 	roblek[hlj] = [[2,3,"1","NOT","BOM"],				[2,6,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,4,"2","NOT","LJU-"],				[2,5,"3"]												];							hlj+=1;
+ 	roblek[hlj] = [[1,5,"1","NOT","BCO"],				[1,6,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,4,"2","NOT","SA-"],				[2,5,"3"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,5,"2","NOT","BO"],				[1,6,"5"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,3,"2","VEN","VZEL"],				[2,5,"3"]												];							hlj+=1;
+
+ 	roblek[hlj] = [[2,2,"1","VEN","TAM"],				[2,6,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,4,"2","VEN","KJER"],				[2,5,"3"]												];							hlj+=1;
+ 	roblek[hlj] = [[1,5,"1","VEN","SEM"],				[1,6,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,4,"2","VEN","BIL"],				[2,5,"3"]												];							hlj+=1;
+ 	roblek[hlj] = [[1,8,"3","VEN","MLAD"],				[1,9,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[1,8,"3","VEN","PA-"],				[1,9,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,6,"3","VEN","STIR"],				[2,7,"4"]												];							hlj+=1;
+
+ 	roblek[hlj] = [[1,8,"3","VEN","UŽI-"],				[1,9,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[1,8,"3","VEN","VAL"],				[1,9,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,6,"3","VEN","BOM"],				[2,7,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[1,8,"3","VEN","Z LJUB-"],			[1,9,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[1,8,"3","VEN","CO"],				[1,9,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,6,"3","VEN","GOR"],				[2,7,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,5,"2","VEN","SKI"],				[1,8,"5"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,5,"2","VEN","MIR"],				[2,6,"3"]												];							hlj+=1;
+
+	// DRUGI DEL 2
+	roblek[hlj] = [[2,3,"1","NOT","KAR"],				[2,6,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,4,"2","NOT","GI-"],				[2,5,"3"]												];							hlj+=1;
+ 	roblek[hlj] = [[1,5,"1","NOT","RI"],				[1,6,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,4,"2","NOT","BOM"],				[2,5,"3"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,5,"3","NOT","O-"],				[3,6,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,5,"3","NOT","STAL"],				[2,6,"4"]												];							hlj+=1;
+
+ 	roblek[hlj] = [[2,3,"1","NOT","BOM"],				[2,6,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,4,"2","NOT","KRA-"],				[2,5,"3"]												];							hlj+=1;
+ 	roblek[hlj] = [[1,5,"1","NOT","VCE"],				[1,6,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,4,"2","NOT","PA-"],				[2,5,"3"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,5,"2","NOT","STI"],				[1,6,"5"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,3,"2","VEN","GNAL"],				[2,5,"3"]												];							hlj+=1;
+
+ 	roblek[hlj] = [[2,2,"1","VEN","NA"],				[2,6,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,4,"2","VEN","RO"],				[2,5,"3"]												];							hlj+=1;
+ 	roblek[hlj] = [[1,5,"1","VEN","BLE"],				[1,6,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,4,"2","VEN","KU"],				[2,5,"3"]												];							hlj+=1;
+ 	roblek[hlj] = [[1,8,"3","VEN","Z LJU"],				[1,9,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[1,8,"3","VEN","BI-"],				[1,9,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,6,"3","VEN","CO"],				[2,7,"4"]												];							hlj+=1;
+
+	roblek[hlj] = [[2,2,"1","VEN","TAM"]																		];							hlj+=1;
+	roblek[hlj] = [[2,3,"2","VEN","O-"]																			];							hlj+=1;
+	roblek[hlj] = [[2,4,"3","VEN","ĆKA"]																		];							hlj+=1;
+ 	roblek[hlj] = [[2,6,"3","VEN","SRE-"],				[2,7,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,6,"3","VEN","ČEN"],				[2,7,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,6,"3","VEN","BOM"],				[2,7,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,5,"2","VEN","KOT"],				[3,8,"5"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,4,"2","VEN","MA"],				[3,5,"3"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,4,"2","VEN","LO"],				[2,5,"3"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,4,"2","NOT","KDO"],				[2,5,"3"]												];							hlj+=1;
+
+	// TRETJI DEL 1
+ 	roblek[hlj] = [[3,3,"1","VEN",""],				[3,7,"4"]												];							hlj+=1;
+
+	roblek[hlj] = [[3,4,"1","NOT",""],				[3,8,"4"]												];							hlj+=1;
+	roblek[hlj] = [[3,4,"1","NOT",""],				[3,8,"4"]												];							hlj+=1;
+	roblek[hlj] = [[3,4,"1","NOT",""],				[3,8,"4"]												];							hlj+=1;
+
+ 	roblek[hlj] = [[3,5,"2","NOT",""],				[3,6,"3"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,5,"2","NOT",""],				[3,6,"3"]												];							hlj+=1; 	
+	roblek[hlj] = [[3,5,"2","NOT",""],				[3,6,"3"]												];							hlj+=1;
+
+ 	roblek[hlj] = [[3,4,"1","NOT",""],				[3,7,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,4,"1","NOT",""],				[3,7,"4"]												];							hlj+=1;
+	roblek[hlj] = [[3,4,"1","NOT",""],				[3,7,"4"]												];							hlj+=1;
+
+ 	roblek[hlj] = [[3,6,"3","NOT",""],				[1,9,"5"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,6,"3","NOT",""],				[1,9,"5"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,6,"3","NOT",""],				[1,9,"5"]												];							hlj+=1;
+
+	roblek[hlj] = [[3,4,"1","NOT",""]																		];							hlj+=1;
+ 	roblek[hlj] = [[3,5,"2","NOT",""],				[3,6,"3"]												];							hlj+=1;
+	roblek[hlj] = [[3,4,"1","NOT",""]																		];							hlj+=1;
+ 	roblek[hlj] = [[3,5,"2","NOT",""],				[3,6,"3"]												];							hlj+=1;
+
+ 	roblek[hlj] = [[3,3,"1","VEN",""],				[3,7,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,4,"2","VEN",""],				[3,6,"3"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,4,"2","VEN",""],				[3,6,"3"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,4,"2","VEN",""],				[3,6,"3"]												];							hlj+=1;
+
+ 	roblek[hlj] = [[3,3,"1","VEN",""],				[3,7,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,3,"1","VEN",""],				[3,7,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,3,"1","VEN",""],				[3,7,"4"]												];							hlj+=1;
+
+ 	roblek[hlj] = [[3,6,"3","VEN",""],				[3,4,"2"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,6,"3","VEN",""],				[3,4,"2"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,6,"3","VEN",""],				[3,4,"2"]												];							hlj+=1;
+ 	
+	roblek[hlj] = [[3,3,"1","VEN",""],				[3,7,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,3,"1","VEN",""],				[3,7,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,3,"1","VEN",""],				[3,7,"4"]												];							hlj+=1;
+ 	
+	roblek[hlj] = [[3,6,"3","VEN",""],				[3,4,"2"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,6,"3","VEN",""],				[3,4,"2"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,6,"3","VEN",""],				[3,4,"2"]												];							hlj+=1;
+ 	
+	roblek[hlj] = [[3,3,"1","VEN",""],				[3,7,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,6,"3","VEN",""],				[3,4,"2"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,3,"1","VEN",""],				[3,7,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,6,"3","VEN",""],				[3,4,"2"]												];							hlj+=1;
+
+ 	roblek[hlj] = [[3,4,"1","NOT",""],				[3,4,"5"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,5,"2","NOT",""],				[3,6,"3"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,5,"2","NOT",""],				[3,6,"3"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,5,"2","NOT",""],				[3,6,"3"]												];							hlj+=1;
+
+
+// drugi zaključek
+ 	roblek[hlj] = [[3,3,"1","VEN",""],				[3,7,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,3,"1","VEN",""],				[3,7,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,4,"1","VEN",""],				[2,8,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,4,"1","VEN",""],				[3,8,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,5,"2","NOT",""],				[3,6,"3"],	[3,7,"4"]									];							hlj+=1;
+
+
+
+  return roblek;
+}
+
 
 function load_keys(komad) {
 	var_offsetX=50;
