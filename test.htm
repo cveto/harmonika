@@ -4,27 +4,45 @@
 <button onclick="load_keys('katjusa')">Katjusa</button>
 <button onclick="load_keys('ribnican')">Ribnican</button>
 <button onclick="load_keys('roblek')">Na Robleku</button>
+<button onclick="DownloadCanvasAsImage()">Download PNG</button>
+
+<h2>PESEM</h2>
+Canvas1
+<div><canvas id="myCanvas" width="1900" height="2687" style="border:1px solid #d3d3d3;"></div>
+
+Canvas2
+<div><canvas id="myCanvas2" width="1900" height="2687" style="border:1px solid #d3d3d3;"></div>
+
+Canvas3
+<div><canvas id="myCanvas3" width="1900" height="2687" style="border:1px solid #d3d3d3;"></div>
+
+Canvas4
+<div><canvas id="myCanvas4" width="1900" height="2687" style="border:1px solid #d3d3d3;"></div>
+
+Canvas5
+<div><canvas id="myCanvas4" width="1900" height="2687" style="border:1px solid #d3d3d3;"></div>
 
 
-<h2>Ribnčan</h2>
-<canvas id="myCanvas" width="2450" height="10000" style="border:1px solid #d3d3d3;">
 Your browser does not support the HTML5 canvas tag.</canvas>
 
 
 <script>
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
+var ctx1 =  document.getElementById("myCanvas").getContext("2d");
+var ctx2 = document.getElementById("myCanvas2").getContext("2d");
+var ctx3 = document.getElementById("myCanvas3").getContext("2d");
+var ctx4 = document.getElementById("myCanvas4").getContext("2d");
+var ctx5 = document.getElementById("myCanvas4").getContext("2d");
+
 
 var button_radius=15;
 var offset_vrsta=0.55;
 var num_rows = 4;
-var num_columns=11;
-var_prelom=13;
+var num_columns=12;
 
 // Drugačna oglasitev harmonike
 var var_popravek_tipke_X = 0;
 var var_popravek_tiple_Y = 0;
-
+var var_prelom = 10;
 
 // Koordinata tipke x, koordianat tipke y, prst, smer meha
 function ribnican() {
@@ -165,7 +183,6 @@ function ribnican() {
 }
 
 function katjusa() {
-	var_prelom=10;
 	hlj=1;
 	var katjusa = new Array;
 	katjusa[hlj] = [[1,7,"4","VEN"]										];							hlj+=1;
@@ -341,7 +358,7 @@ function roblek() {
 
 	// DRUGI DEL 2
 	roblek[hlj] = [[2,3,"1","NOT","KAR"],				[2,6,"4"]												];							hlj+=1;
- 	roblek[hlj] = [[2,4,"2","NOT","GI-"],				[2,5,"3"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,4,"2","NOT","GO-"],				[2,5,"3"]												];							hlj+=1;
  	roblek[hlj] = [[1,5,"1","NOT","RI"],				[1,6,"4"]												];							hlj+=1;
  	roblek[hlj] = [[2,4,"2","NOT","BOM"],				[2,5,"3"]												];							hlj+=1;
  	roblek[hlj] = [[3,5,"3","NOT","O-"],				[3,6,"4"]												];							hlj+=1;
@@ -368,47 +385,47 @@ function roblek() {
  	roblek[hlj] = [[2,6,"3","VEN","SRE-"],				[2,7,"4"]												];							hlj+=1;
  	roblek[hlj] = [[2,6,"3","VEN","ČEN"],				[2,7,"4"]												];							hlj+=1;
  	roblek[hlj] = [[2,6,"3","VEN","BOM"],				[2,7,"4"]												];							hlj+=1;
- 	roblek[hlj] = [[2,5,"2","VEN","KOT"],				[3,8,"5"]												];							hlj+=1;
- 	roblek[hlj] = [[3,4,"2","VEN","MA"],				[3,5,"3"]												];							hlj+=1;
- 	roblek[hlj] = [[2,4,"2","VEN","LO"],				[2,5,"3"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,5,"2","VEN","KOT"],				[1,8,"5"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,4,"1","VEN","MA"],				[2,6,"3"]												];							hlj+=1;
+ 	roblek[hlj] = [[2,4,"1","VEN","LO"],				[2,5,"2"]												];							hlj+=1;
  	roblek[hlj] = [[2,4,"2","NOT","KDO"],				[2,5,"3"]												];							hlj+=1;
 
 	// TRETJI DEL 1
  	roblek[hlj] = [[3,3,"1","VEN",""],				[3,7,"4"]												];							hlj+=1;
 
-	roblek[hlj] = [[3,4,"1","NOT",""],				[3,7,"4"]												];							hlj+=1;
-	roblek[hlj] = [[3,4,"1","NOT",""],				[3,7,"4"]												];							hlj+=1;
-	roblek[hlj] = [[3,4,"1","NOT",""],				[3,7,"4"]												];							hlj+=1;
+	roblek[hlj] = [[3,4,"1","NOT","TA"],				[3,7,"4"]												];							hlj+=1;
+	roblek[hlj] = [[3,4,"1","NOT","DA"],				[3,7,"4"]												];							hlj+=1;
+	roblek[hlj] = [[3,4,"1","NOT","DA"],				[3,7,"4"]												];							hlj+=1;
 
- 	roblek[hlj] = [[3,5,"2","NOT",""],				[3,6,"3"]												];							hlj+=1;
- 	roblek[hlj] = [[3,5,"2","NOT",""],				[3,6,"3"]												];							hlj+=1; 	
-	roblek[hlj] = [[3,5,"2","NOT",""],				[3,6,"3"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,5,"2","NOT","TI"],				[3,6,"3"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,5,"2","NOT","DI"],				[3,6,"3"]												];							hlj+=1; 	
+	roblek[hlj] = [[3,5,"2","NOT","DI"],				[3,6,"3"]												];							hlj+=1;
 
- 	roblek[hlj] = [[3,4,"1","NOT",""],				[3,7,"4"]												];							hlj+=1;
- 	roblek[hlj] = [[3,4,"1","NOT",""],				[3,7,"4"]												];							hlj+=1;
-	roblek[hlj] = [[3,4,"1","NOT",""],				[3,7,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,4,"1","NOT","TA"],				[3,7,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,4,"1","NOT","TA"],				[3,7,"4"]												];							hlj+=1;
+	roblek[hlj] = [[3,4,"1","NOT","DA"],				[3,7,"4"]												];							hlj+=1;
 
- 	roblek[hlj] = [[3,6,"3","NOT",""],				[1,9,"5"]												];							hlj+=1;
- 	roblek[hlj] = [[3,6,"3","NOT",""],				[1,9,"5"]												];							hlj+=1;
- 	roblek[hlj] = [[3,6,"3","NOT",""],				[1,9,"5"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,6,"3","NOT","TI"],				[1,9,"5"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,6,"3","NOT","DI"],				[1,9,"5"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,6,"3","NOT","DI"],				[1,9,"5"]												];							hlj+=1;
 
-	roblek[hlj] = [[3,4,"1","NOT",""]																		];							hlj+=1;
- 	roblek[hlj] = [[3,5,"2","NOT",""],				[3,6,"3"]												];							hlj+=1;
-	roblek[hlj] = [[3,4,"1","NOT",""]																		];							hlj+=1;
- 	roblek[hlj] = [[3,5,"2","NOT",""],				[3,6,"3"]												];							hlj+=1;
+	roblek[hlj] = [[3,4,"1","NOT","TA"]				 														];							hlj+=1;
+ 	roblek[hlj] = [[3,5,"2","NOT","TI"],				[3,6,"3"]												];							hlj+=1;
+	roblek[hlj] = [[3,4,"1","NOT","TA"]																		];							hlj+=1;
+ 	roblek[hlj] = [[3,5,"2","NOT","TI"],				[3,6,"3"]												];							hlj+=1;
+
+ 	roblek[hlj] = [[3,3,"1","VEN","TA"],				[3,7,"4"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,4,"2","VEN","TI"],				[3,6,"3"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,4,"2","VEN","DI"],				[3,6,"3"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,4,"2","VEN","DI"],				[3,6,"3"]												];							hlj+=1;
 
  	roblek[hlj] = [[3,3,"1","VEN",""],				[3,7,"4"]												];							hlj+=1;
- 	roblek[hlj] = [[3,4,"2","VEN",""],				[3,6,"3"]												];							hlj+=1;
- 	roblek[hlj] = [[3,4,"2","VEN",""],				[3,6,"3"]												];							hlj+=1;
- 	roblek[hlj] = [[3,4,"2","VEN",""],				[3,6,"3"]												];							hlj+=1;
-
- 	roblek[hlj] = [[3,3,"1","VEN",""],				[3,7,"4"]												];							hlj+=1;
  	roblek[hlj] = [[3,3,"1","VEN",""],				[3,7,"4"]												];							hlj+=1;
  	roblek[hlj] = [[3,3,"1","VEN",""],				[3,7,"4"]												];							hlj+=1;
 
- 	roblek[hlj] = [[3,6,"3","VEN",""],				[3,4,"2"]												];							hlj+=1;
- 	roblek[hlj] = [[3,6,"3","VEN",""],				[3,4,"2"]												];							hlj+=1;
- 	roblek[hlj] = [[3,6,"3","VEN",""],				[3,4,"2"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,6,"3","VEN",""],				[2,3,"1"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,6,"3","VEN",""],				[2,3,"1"]												];							hlj+=1;
+ 	roblek[hlj] = [[3,6,"3","VEN",""],				[2,3,"1"]												];							hlj+=1;
  	
 	roblek[hlj] = [[3,3,"1","VEN",""],				[3,7,"4"]												];							hlj+=1;
  	roblek[hlj] = [[3,3,"1","VEN",""],				[3,7,"4"]												];							hlj+=1;
@@ -441,15 +458,28 @@ function roblek() {
   return roblek;
 }
 
-
 function load_keys(komad) {
 	var_offsetX=50;
 	var_offsetY=75;
-	ctx.clearRect(0, 0, 5000, 5000);
+	ctx1.clearRect(0, 0, 5000, 5000);
+	ctx2.clearRect(0, 0, 5000, 5000);
+	ctx3.clearRect(0, 0, 5000, 5000);
+	ctx4.clearRect(0, 0, 5000, 5000);
+	ctx5.clearRect(0, 0, 5000, 5000);
+
+
 	poz=window[komad]();
+	var j_canvas = 1;
+	
 	for (l=1;l<=poz.length;l++) {
 		flag_minus=-1;
-		
+		if (l == 	1) {	var_offsetX=50; var_offsetY=75; ctx = ctx1	}
+		if (l == 51) {	var_offsetX=50; var_offsetY=75; ctx = ctx2	}
+		if (l == 101) {	var_offsetX=50; var_offsetY=75; ctx = ctx3	}
+		if (l == 151) {	var_offsetX=50; var_offsetY=75; ctx = ctx4	}
+		if (l == 201) {	var_offsetX=50; var_offsetY=75; ctx = ctx5	}
+
+
 		ctx.font = "30px Arial";
 		ctx.fillStyle = "black";
 		if (poz[l][0][4]) {
@@ -532,7 +562,26 @@ function load_keys(komad) {
 }
 }
 
+function DownloadCanvasAsImage(){
+	let downloadLink = document.createElement('a');
+	downloadLink.setAttribute('download', 'CanvasAsImage.png');
+	
+	let canvas = document.getElementById('myCanvas');
+	let canvas2 = document.getElementById('myCanvas2');
 
+  let dataURL = canvas.toDataURL('image/png');
+  let dataURL2 = canvas2.toDataURL('image/png');
+
+  let url = dataURL.replace(/^data:image\/png/,'data:application/octet-stream');
+  let url2 = dataURL2.replace(/^data:image\/png/,'data:application/octet-stream');
+
+	downloadLink.setAttribute('href',url);
+	downloadLink.click();
+	downloadLink.setAttribute('href',url2);
+	downloadLink.click();
+
+
+}
 
 
 poz = new Array;
