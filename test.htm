@@ -6,7 +6,7 @@
 <button onclick="load_keys('roblek')">Na Robleku</button>
 <button onclick="DownloadCanvasAsImage()">Download PNG</button>
 
-<h2>PESEM</h2>
+<h2><div id="title">PESEM</div></h2>
 <div id="tabulare"></div>
 
 
@@ -20,11 +20,11 @@ var button_radius=15;
 var offset_vrsta=0.55;
 var num_rows = 4;
 var num_columns=12;
-var canvas_width=1900;
+var canvas_width=2050;
 var canvas_height=canvas_width*Math.sqrt(2);
 var var_prelom = 10;
-const const_offsetX=50;
-const const_offsetY=75;
+const const_offsetX=130;
+const const_offsetY=120;
 var var_offsetX=const_offsetX;
 var var_offsetY=const_offsetY;
 
@@ -469,6 +469,8 @@ function roblek() {
 
 // Draws the image
 function load_keys(komad) {
+	document.getElementById('title').innerHTML = komad;
+
 	
 	poz=window[komad]();																											// I think this calls the function? or clones an array?
 	num_pages = Math.ceil(poz.length/(num_columns*num_rows));																	// Get necessary number of pages
@@ -480,6 +482,9 @@ function load_keys(komad) {
 	for (i=1;i<=num_pages;i++) {
 		ctxA[i].clearRect(0, 0, canvas_height, canvas_height);
 	}
+	
+	// footer
+	
 
 
 	
@@ -577,7 +582,7 @@ function load_keys(komad) {
 	var_offsetX=var_offsetX+button_radius*12;
 	if (l%var_prelom==0) {
 		var_offsetY=var_offsetY+num_columns*button_radius*3
-		var_offsetX=50;
+		var_offsetX=const_offsetX;
 	}
 	
 }
@@ -588,9 +593,9 @@ function DownloadCanvasAsImage(){
 	downloadLink.setAttribute('download', 'CanvasAsImage.png');
 	
 	let url = new Array;
-
 	for (i = 1; i <= num_pages; i++) {
 		url[i] = document.getElementById('myCanvas'+i).toDataURL('image/png').replace(/^data:image\/png/,'data:application/octet-stream');
+		downloadLink.download=document.getElementById('title').innerHTML+i+'.png'
 		downloadLink.setAttribute('href',url[i]);
 		downloadLink.click();
 	}
