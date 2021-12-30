@@ -1,0 +1,72 @@
+UGLASTIVE HARMONIKE
+
+C	F	B
+B	ES	AS
+CIS	FIS	H
+H	E	A
+A	D	G
+
+
+  4  3
+
+
+
+Des			E			A		Des			ES		A		Des			E		A		Des			ES
+
+
+
+
+
+
+DES GES CES NOT
+    2      1.5   2.5    2      1.5   2.5    2      1.5   2.5
+C       E     G     C       E     G     C       E     G     C
+
+    2      1.5   2.5    2      1.5   2.5    2      1.5   2.5    2
+G       B     D     G       B     D     G       B     D     G       B
+
+    1.5   2.5    2     1.5    2.5   2       1.5   2.5    2      1.5
+Ges     A     D     Ges     A     D     Ges     A     D     Ges
+
+    1.5   2.5    2     1.5    2.5   2       1.5   2.5    2      1.5
+Des     E     A     Des     E     A     Des     E     A     Des     E
+
+
+DES GES CES VEN
+    1      2    1.5     1.5    1     2      1.5   1.5    1
+F       G     B     D       F     G     B       D     F     G
+    1      2    1.5     1.5    1     2      1.5   1.5    2     1.5
+C       D     Ges   A       C     D     Ges     A     C     E    Ges
+    2      1.5  1.5     1      2     1.5    1.5   2      1.5
+A       Des   E     G       A     Des   E       G     B     Des
+    2      1.5  1.5     1      2     1.5    1.5   2      1.5 
+E       As    B     D       E     As    B       D     Ges   As   G?
+
+
+TRIXHI
+
+NOT  -obrnjen narobe ??
+      1       1       2    1.5     2.5   2    1.5    2.5   2
+SOL#     SIb     DO      MI    SOL    DO    MI    SOL   DO    MI
+G#       Bb      C       E     G      C     E     G     C     E
+ 
+      0       2       2     1.5    2.5   2     1.5   2.5    2    1.5
+RE#      RE#     SOL     SI    RE     SOL   SI    RE    SOL   SI    RE
+D#       D#      G       B     D      G     B     D     G     B     D
+
+
+
+VEN - obrnjen
+     1       2       1.5     2     1     1.5   1.5   2     1
+SOL#     SIb     RE      FA    LA     SI    RE    FA    LA    SI
+G#       Bb      D       F     A      B     D     F     A     B
+
+     0               1.5    2      1     1.5   1.5   2     1
+DO#      DO#     LA      DO    MI     FA#   LA    DO    MI    FA#
+C#       C#      A       C     E      F#    A     C     E     F#
+
+
+
+
+D   G   A   D   G
+

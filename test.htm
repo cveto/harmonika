@@ -7,42 +7,51 @@
 <button onclick="DownloadCanvasAsImage()">Download PNG</button>
 
 <h2>PESEM</h2>
-Canvas1
-<div><canvas id="myCanvas" width="1900" height="2687" style="border:1px solid #d3d3d3;"></div>
+<div id="tabulare"></div>
 
-Canvas2
-<div><canvas id="myCanvas2" width="1900" height="2687" style="border:1px solid #d3d3d3;"></div>
-
-Canvas3
-<div><canvas id="myCanvas3" width="1900" height="2687" style="border:1px solid #d3d3d3;"></div>
-
-Canvas4
-<div><canvas id="myCanvas4" width="1900" height="2687" style="border:1px solid #d3d3d3;"></div>
-
-Canvas5
-<div><canvas id="myCanvas4" width="1900" height="2687" style="border:1px solid #d3d3d3;"></div>
-
-
-Your browser does not support the HTML5 canvas tag.</canvas>
 
 
 <script>
-var ctx1 =  document.getElementById("myCanvas").getContext("2d");
-var ctx2 = document.getElementById("myCanvas2").getContext("2d");
-var ctx3 = document.getElementById("myCanvas3").getContext("2d");
-var ctx4 = document.getElementById("myCanvas4").getContext("2d");
-var ctx5 = document.getElementById("myCanvas4").getContext("2d");
+var ctxA = new Array;										// An Array of contexts
+var myCanvasA = new Array;									// An Array of canvases
 
-
+// Visual settings
 var button_radius=15;
 var offset_vrsta=0.55;
 var num_rows = 4;
 var num_columns=12;
+var canvas_width=1900;
+var canvas_height=canvas_width*Math.sqrt(2);
+var var_prelom = 10;
+const const_offsetX=50;
+const const_offsetY=75;
+var var_offsetX=const_offsetX;
+var var_offsetY=const_offsetY;
 
-// Drugačna oglasitev harmonike
+// offset - Drugačna oglasitev harmonike
 var var_popravek_tipke_X = 0;
 var var_popravek_tiple_Y = 0;
-var var_prelom = 10;
+
+// Static variables
+var num_pages;
+
+function get_number_of_pages(song_in_array) {
+	return "5";
+}
+
+function prepare_canvases(num_pages) {
+	document.getElementById('tabulare').innerHTML = '';
+
+	for (i = 1; i <= num_pages; i++) {
+		document.getElementById('tabulare').innerHTML += 'Page'+i+'<div><canvas id="myCanvas'+i+'" width='+canvas_width+' height="'+canvas_height+'" style="border:1px solid #d3d3d3;"></div>'
+	}
+	
+	for (i = 1; i <= num_pages; i++) {
+		ctxA[i] = document.getElementById("myCanvas"+i).getContext("2d");
+	}
+
+}
+
 
 // Koordinata tipke x, koordianat tipke y, prst, smer meha
 function ribnican() {
@@ -460,27 +469,35 @@ function roblek() {
 
 // Draws the image
 function load_keys(komad) {
-	var_offsetX=50;
-	var_offsetY=75;
 	
-	ctx1.clearRect(0, 0, 5000, 5000);
-	ctx2.clearRect(0, 0, 5000, 5000);
-	ctx3.clearRect(0, 0, 5000, 5000);
-	ctx4.clearRect(0, 0, 5000, 5000);
-	ctx5.clearRect(0, 0, 5000, 5000);
+	poz=window[komad]();																											// I think this calls the function? or clones an array?
+	num_pages = Math.ceil(poz.length/(num_columns*num_rows));																	// Get necessary number of pages
+
+	// Clear main div
+	prepare_canvases(num_pages);
+
+	// Clear all canvases
+	for (i=1;i<=num_pages;i++) {
+		ctxA[i].clearRect(0, 0, canvas_height, canvas_height);
+	}
 
 
-	poz=window[komad]();																											// I think this clones the array to a new array. poz=komad does not work for array 
 	
 	// MAIN LOOP, each one is a picture of the accordion
+	var l_change_offset=1;
+	var num_ctx=1;
+
 	for (l=1;l<=poz.length;l++) {
 		flag_minus=-1;																												// makes the shape of the accordion keyboard --offset
-		
-		if (l == 	1) {	var_offsetX=50; var_offsetY=75; ctx = ctx1	}															// Logic controlling which canvas to draw to (multipage - so it can be printed on A4)
-		if (l == 51) {	var_offsetX=50; var_offsetY=75; ctx = ctx2	}
-		if (l == 101) {	var_offsetX=50; var_offsetY=75; ctx = ctx3	}
-		if (l == 151) {	var_offsetX=50; var_offsetY=75; ctx = ctx4	}
-		if (l == 201) {	var_offsetX=50; var_offsetY=75; ctx = ctx5	}
+
+		// Logic to change to nex context every 50th
+		if (l == l_change_offset) {	
+			var_offsetX=const_offsetX; 
+			var_offsetY=const_offsetY; 
+			ctx = ctxA[num_ctx]
+			l_change_offset=l_change_offset+50;
+			num_ctx=num_ctx+1;
+			}
 
 		ctx.font = "30px Arial";
 		ctx.fillStyle = "black";
@@ -570,26 +587,15 @@ function DownloadCanvasAsImage(){
 	let downloadLink = document.createElement('a');
 	downloadLink.setAttribute('download', 'CanvasAsImage.png');
 	
-	let canvas = document.getElementById('myCanvas');
-	let canvas2 = document.getElementById('myCanvas2');
+	let url = new Array;
 
-  let dataURL = canvas.toDataURL('image/png');
-  let dataURL2 = canvas2.toDataURL('image/png');
-
-  let url = dataURL.replace(/^data:image\/png/,'data:application/octet-stream');
-  let url2 = dataURL2.replace(/^data:image\/png/,'data:application/octet-stream');
-
-	downloadLink.setAttribute('href',url);
-	downloadLink.click();
-	downloadLink.setAttribute('href',url2);
-	downloadLink.click();
-
-
+	for (i = 1; i <= num_pages; i++) {
+		url[i] = document.getElementById('myCanvas'+i).toDataURL('image/png').replace(/^data:image\/png/,'data:application/octet-stream');
+		downloadLink.setAttribute('href',url[i]);
+		downloadLink.click();
+	}
 }
 
-
-poz = new Array;
-poz=katjusa();
 
 
 
