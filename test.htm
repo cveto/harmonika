@@ -5,11 +5,13 @@
 <button onclick="load_keys('ribnican')">Ribnican</button>
 <button onclick="load_keys('roblek')">Na Robleku</button>
 <button onclick="DownloadCanvasAsImage()">Download PNG</button>
+<button onclick="DownloadCanvasAsPDF()">Download PDF</button>
 
 <h2><div id="title">PESEM</div></h2>
 <div id="tabulare"></div>
 
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js">// FOR PDF CREATION</script>
 
 <script>
 var ctxA = new Array;										// An Array of contexts
@@ -481,6 +483,8 @@ function load_keys(komad) {
 	// Clear all canvases
 	for (i=1;i<=num_pages;i++) {
 		ctxA[i].clearRect(0, 0, canvas_height, canvas_height);
+		ctxA[i].fillStyle = 'white';
+		ctxA[i].fillRect(0, 0, canvas_height, canvas_height);
 	}
 	
 	// footer
@@ -599,6 +603,26 @@ function DownloadCanvasAsImage(){
 		downloadLink.setAttribute('href',url[i]);
 		downloadLink.click();
 	}
+}
+
+function DownloadCanvasAsPDF(){
+	let downloadLink = document.createElement('a');
+	downloadLink.setAttribute('download', 'CanvasAsImage.png');
+	
+	let page = new Array;
+	var mm2px = 3.5;			// I dont know why this works
+	var pdf = new jsPDF('p', 'pt', 'A4');
+	for (i = 1; i <= num_pages; i++) {
+		page[i] = document.getElementById('myCanvas'+i).toDataURL('image/jpeg');
+		pdf.addImage(page[i],'jpeg',0,0,canvas_width/mm2px,canvas_height/mm2px);
+		if (i<=num_pages-1) {
+			pdf.addPage();
+		}
+
+	}
+		pdf.save('autoprint.pdf');
+	
+	
 }
 
 
