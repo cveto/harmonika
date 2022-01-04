@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
-<body onload="load_keys('roblek')">
+<body onload="load_keys('nocoj')">
 <button onclick="load_keys('katjusa')">Katjusa</button>
 <button onclick="load_keys('ribnican')">Ribnican</button>
 <button onclick="load_keys('roblek')">Na Robleku</button>
+<button onclick="load_keys('nocoj')">Nocoj</button>
 <button onclick="DownloadCanvasAsImage()">Download PNG</button>
 <button onclick="DownloadCanvasAsPDF()">Download PDF</button>
 
@@ -467,6 +468,93 @@ function roblek() {
 
 
   return roblek;
+}
+
+
+function nocoj() {
+	// Druga vrsta ena manj kokr na videu
+	var_popravek_tipke_X = 0;
+	var_popravek_tiple_Y = 0;
+	hlj=1;
+	var nocoj = new Array;
+	// UVOD
+ 	nocoj[hlj] = [[3,4,"1","NOT",""],					[3,7,"4"]												];							hlj+=1;
+ 	nocoj[hlj] = [[3,5,"2","NOT",""],					[3,6,"3"]												];							hlj+=1;
+ 	nocoj[hlj] = [[3,5,"2","NOT",""],					[3,6,"3"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,6,"2","NOT",""],					[2,7,"3"]												];							hlj+=1;
+ 	nocoj[hlj] = [[3,6,"2","NOT",""],					[3,7,"3"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,6,"3","NOT",""],					[2,7,"4"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,5,"3","NOT",""],					[2,6,"4"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,4,"2","NOT",""],					[2,5,"3"]												];							hlj+=1;
+
+ 	nocoj[hlj] = [[2,5,"2","VEN",""],					[1,8,"5"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,5,"2","VEN",""],					[1,8,"5"]												];							hlj+=1;
+ 	nocoj[hlj] = [[3,4,"2","VEN",""],					[3,5,"3"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,4,"1","VEN",""],					[2,5,"4"]												];							hlj+=1;
+ 	nocoj[hlj] = [[1,5,"2","NOT",""],					[2,5,"3"]												];							hlj+=1;  //??
+
+	// PRVI del
+ 	nocoj[hlj] = [[2,5,"3","NOT","ČE"],					[2,6,"4"]												];							hlj+=1;
+ 	nocoj[hlj] = [[3,5,"3","NOT","DO-"],				[3,6,"4"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,5,"3","NOT","LGO"],				[2,6,"4"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,4,"2","NOT","BOŠ"],				[2,5,"3"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,5,"3","NOT","IZ-"],				[2,6,"4"]												];							hlj+=1;
+ 	nocoj[hlj] = [[3,5,"3","NOT","BI-"],				[3,6,"4"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,5,"3","NOT","RA-"],				[2,6,"4"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,4,"2","NOT","LA"],					[2,5,"3"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,5,"3","NOT","ZA-"],				[2,6,"4"]												];							hlj+=1;
+ 	nocoj[hlj] = [[3,5,"2","NOT","LA"],					[1,6,"5"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,4,"2","NOT","DE-"],				[2,5,"3"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,5,"3","NOT","KLI-"],				[2,6,"4"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,4,"2","VEN","CA"],					[2,5,"3"]												];							hlj+=1;
+
+ 	nocoj[hlj] = [[3,3,"1","VEN",""],					[3,7,"4"]												];							hlj+=1;
+ 	nocoj[hlj] = [[3,5,"2","NOT","FA-"],				[3,6,"3"]												];							hlj+=1;
+ 	nocoj[hlj] = [[3,5,"2","NOT","NTOV"],				[3,6,"3"]												];							hlj+=1;
+ 	nocoj[hlj] = [[3,5,"2","NOT","ŠTE-"],				[3,6,"3"]												];							hlj+=1;
+ 	nocoj[hlj] = [[1,7,"1","NOT","LA"],					[1,8,"4"]												];							hlj+=1;
+ 	nocoj[hlj] = [[3,6,"2","NOT","VEĆ"],				[3,7,"3"]												];							hlj+=1;
+ 	nocoj[hlj] = [[1,7,"1","NOT","NE"],					[1,8,"4"]												];							hlj+=1;
+ 	nocoj[hlj] = [[3,5,"2","NOT","BOŠ"],				[3,6,"3"]												];							hlj+=1;
+
+ 	nocoj[hlj] = [[3,5,"2","NOT","O-"],					[3,6,"3"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,6,"2","VEN","STA"],				[2,7,"3"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,6,"2","VEN","LA"],					[2,7,"3"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,4,"2","VEN","BREZ"],				[2,5,"3"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,5,"2","VEN","MO-"],				[1,8,"5"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,5,"3","NOT","ŽA"],					[2,6,"4"]												];							hlj+=1;
+
+ 	nocoj[hlj] = [[2,5,"3","NOT","SEM"],				[2,6,"4"]												];							hlj+=1;
+ 	nocoj[hlj] = [[3,5,"3","NOT","DO-"],				[3,6,"4"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,5,"3","NOT","LGO"],				[2,6,"4"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,4,"2","NOT","HO-"],				[2,5,"3"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,5,"3","NOT","DIL"],				[2,6,"4"]												];							hlj+=1;
+ 	nocoj[hlj] = [[3,5,"3","NOT","ZA"],					[3,6,"4"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,5,"3","NOT","TE-"],				[2,6,"4"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,4,"2","NOT","BOJ"],				[2,5,"3"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,5,"3","NOT","IN"],					[2,6,"4"]												];							hlj+=1;
+ 	nocoj[hlj] = [[3,5,"2","NOT","VE-"],				[1,6,"5"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,4,"2","NOT","RJEL"],				[2,5,"3"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,5,"3","NOT","TI"],					[2,6,"4"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,4,"2","VEN","VSE"],				[2,5,"3"]												];							hlj+=1;
+
+ 	nocoj[hlj] = [[3,4,"1","VEN",""],					[3,7,"4"]												];							hlj+=1;
+ 	nocoj[hlj] = [[3,5,"2","NOT","ZDAJ"],				[3,6,"3"]												];							hlj+=1;
+ 	nocoj[hlj] = [[3,5,"2","NOT","SEM"],				[3,6,"3"]												];							hlj+=1;
+ 	nocoj[hlj] = [[1,7,"1","NOT","KON-"],				[1,8,"4"]												];							hlj+=1;
+ 	nocoj[hlj] = [[3,6,"2","NOT","ČNO"],				[3,7,"3"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,6,"3","NOT","LE"],					[2,7,"4"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,5,"3","NOT","SPO"],				[2,6,"4"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,4,"2","NOT","ZNAL"],				[2,5,"3"]												];							hlj+=1;
+
+ 	nocoj[hlj] = [[2,5,"2","VEN","DA"],					[1,8,"5"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,5,"2","VEN","NE"],					[1,8,"5"]												];							hlj+=1;
+ 	nocoj[hlj] = [[3,4,"2","VEN","LJU-"],				[3,5,"3"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,4,"2","VEN","BIŠ"],				[2,5,"3"]												];							hlj+=1;
+ 	nocoj[hlj] = [[2,4,"2","NOT","ME"],					[2,5,"3"]												];							hlj+=1;
+
+
+	return nocoj;
 }
 
 // Draws the image
