@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
-<body onload="load_keys('zillertaler')">
+<body onload="load_keys('nasmarjetni')">
 <button onclick="load_keys('kranjskod')">Kranjsko Dekle</button>
 <button onclick="load_keys('katjusa')">Katjusa</button>
 <button onclick="load_keys('ribnican')">Ribnican</button>
 <button onclick="load_keys('roblek')">Na Robleku</button>
 <button onclick="load_keys('nocoj')">Nocoj</button>
 <button onclick="load_keys('zillertaler')">zillertaler</button>
+<button onclick="load_keys('nasmarjetni')">Na Smarjetni</button>
+
 
 <button onclick="DownloadCanvasAsImage()">Download PNG</button>
 <button onclick="DownloadCanvasAsPDF()">Download PDF</button>
@@ -61,7 +63,71 @@ function prepare_canvases(num_pages) {
 
 // Koordinata tipke x, koordianat tipke y, prst, smer meha
 
+function nasmarjetni() {
+	// Druga vrsta ena manj kokr na videu
+	var_popravek_tipke_X = 0;
+	var_popravek_tiple_Y = 0;
+	hlj=1;
+	var nasmarjetni = new Array;
+	//https://www.youtube.com/watch?v=HjUVpOfV-TI
+	
+	// UVOD
+ 	nasmarjetni[hlj] = [[1,8,"1","VEN",""],					[1,9,"4"]												];							hlj+=1;
+	nasmarjetni[hlj] = [[2,6,"2","VEN",""],					[2,7,"3"]												];							hlj+=1;
+ 	nasmarjetni[hlj] = [[1,8,"1","VEN",""],					[1,9,"4"]												];							hlj+=1;
+	nasmarjetni[hlj] = [[2,6,"2","VEN",""],					[2,7,"3"]												];							hlj+=1;
 
+ 	nasmarjetni[hlj] = [[3,6,"2","NOT",""],					[3,7,"3"]												];							hlj+=1;
+	nasmarjetni[hlj] = [[2,6,"1","NOT",""],					[2,7,"4"]												];							hlj+=1;
+ 	nasmarjetni[hlj] = [[3,6,"2","NOT",""],					[3,7,"3"]												];							hlj+=1;
+	nasmarjetni[hlj] = [[2,6,"1","NOT",""],					[2,7,"4"]												];							hlj+=1;
+	
+	nasmarjetni[hlj] = [[2,6,"2","VEN",""],					[2,7,"3"]												];							hlj+=1;
+ 	nasmarjetni[hlj] = [[1,8,"1","VEN",""],					[1,9,"4"]												];							hlj+=1;
+	nasmarjetni[hlj] = [[2,6,"2","VEN",""],					[2,7,"3"]												];							hlj+=1;
+ 	nasmarjetni[hlj] = [[1,8,"1","VEN",""],					[1,9,"4"]												];							hlj+=1;
+	nasmarjetni[hlj] = [[2,6,"2","VEN",""],					[2,7,"3"]												];							hlj+=1;
+ 	nasmarjetni[hlj] = [[1,8,"1","VEN",""],					[1,9,"4"]												];							hlj+=1;
+	nasmarjetni[hlj] = [[2,6,"2","VEN",""],					[2,7,"3"]												];							hlj+=1;
+	
+	nasmarjetni[hlj] = [[2,2,"1","VEN","LE"],					[2,6,"4"]												];							hlj+=1;
+	nasmarjetni[hlj] = [[2,2,"1","VEN","PO-"],					[2,6,"4"]												];							hlj+=1;
+	nasmarjetni[hlj] = [[2,4,"2","NOT","VEJ"],					[2,5,"3"]												];							hlj+=1;
+	nasmarjetni[hlj] = [[2,5,"3","NOT","MI"],					[2,6,"4"]												];							hlj+=1;
+	nasmarjetni[hlj] = [[3,5,"3","NOT","SR-"],					[3,6,"4"]												];							hlj+=1;
+	nasmarjetni[hlj] = [[3,5,"3","NOT","ČEK"],					[3,6,"4"]												];							hlj+=1;
+	nasmarjetni[hlj] = [[3,4,"2","VEN","MOJ"],					[3,5,"3"]												];							hlj+=1;
+
+	nasmarjetni[hlj] = [[2,2,"1","VEN","KAM"],					[2,6,"4"]												];							hlj+=1;
+	nasmarjetni[hlj] = [[2,2,"1","VEN","BI"],					[2,6,"4"]												];							hlj+=1;
+    nasmarjetni[hlj] = [[2,4,"2","NOT","RA-"],					[2,5,"3"]												];							hlj+=1;
+	nasmarjetni[hlj] = [[2,5,"3","NOT","DA"],					[2,6,"4"]												];							hlj+=1;
+	nasmarjetni[hlj] = [[1,7,"4","NOT","ŠLA"],					[1,8,"5"]												];							hlj+=1;
+    nasmarjetni[hlj] = [[3,5,"2","NOT","Z ME-"],				[3,6,"3"]												];							hlj+=1;
+	nasmarjetni[hlj] = [[2,4,"2","VEN","NOJ"],					[2,5,"3"]												];							hlj+=1;
+	
+	nasmarjetni[hlj] = [[2,2,"1","VEN","KAM"],					[2,6,"4"]												];							hlj+=1;
+	nasmarjetni[hlj] = [[2,2,"1","VEN","TE"],					[2,6,"4"]												];							hlj+=1;
+	nasmarjetni[hlj] = [[2,3,"2","VEN","VLE-"],					[2,5,"3"]												];							hlj+=1;
+	nasmarjetni[hlj] = [[2,4,"2","VEN","ČE"],					[2,5,"3"]												];							hlj+=1;
+    nasmarjetni[hlj] = [[3,4,"2","VEN","ZDAJ"],					[3,5,"3"]												];							hlj+=1;
+    nasmarjetni[hlj] = [[3,4,"2","VEN","SR"],					[3,5,"3"]												];							hlj+=1;
+	nasmarjetni[hlj] = [[2,4,"2","VEN","CE"],					[2,5,"3"]												];							hlj+=1;
+
+	nasmarjetni[hlj] = [[2,5,"2","VEN","AL"],					[1,8,"4"]												];							hlj+=1;
+	nasmarjetni[hlj] = [[2,5,"2","VEN","NA"],					[1,8,"4"]												];							hlj+=1;
+	nasmarjetni[hlj] = [[3,4,"2","VEN","MOR-"],					[3,5,"3"]												];							hlj+=1;
+	nasmarjetni[hlj] = [[2,4,"2","VEN","JE"],					[2,5,"3"]												];							hlj+=1;
+	nasmarjetni[hlj] = [[1,4,"1","VEN","AL"],					[2,5,"3"]												];							hlj+=1;
+	nasmarjetni[hlj] = [[2,3,"1","VEN","V GO-"],				[2,5,"3"]												];							hlj+=1;
+	nasmarjetni[hlj] = [[2,4,"2","NOT","RE"],					[2,5,"3"]												];							hlj+=1;
+	nasmarjetni[hlj] = [[1,5,"1","NOT",""],					[2,5,"3"]												];							hlj+=1;
+	nasmarjetni[hlj] = [[3,3,"2","NOT",""],					[2,5,"3"]												];							hlj+=1;
+
+
+	return nasmarjetni;
+}
+	
 function zillertaler() {
 	// Druga vrsta ena manj kokr na videu
 	var_popravek_tipke_X = 0;
